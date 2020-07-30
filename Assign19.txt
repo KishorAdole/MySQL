@@ -1,0 +1,26 @@
+1. Create a view that shows all of the customers who have the highest ratings.
+
+	CREATE VIEW V
+	AS
+	SELECT MAX(RATING) FROM CUSTOMERS;
+
+2. Create a view that shows the number of salespeople in each city.
+
+	CREATE VIEW V1
+	AS
+	SELECT CITY,COUNT(SNUM)'Salespeople' FROM SALESPEOPLE 
+	GROUP BY CITY;
+
+3. Create a view that shows the average and total orders for each salesperson after 
+   his or her name. Assume all names are unique.
+	
+	CREATE VIEW V2
+	AS
+	SELECT SNUM,COUNT(ONUM)"total_orders" FROM ORDERS GROUP BY SNUM;
+	
+
+4. Create a view that shows each salesperson with multiple customers.
+	
+	CREATE VIEW V3
+	AS
+	SELECT SNUM,CNUM FROM CUSTOMERS;	
