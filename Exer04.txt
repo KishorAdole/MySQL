@@ -1,0 +1,49 @@
+1: Display the minimum Status in the Supplier table.
+
+	SELECT MIN(STATUS)
+	FROM SUPPLIER;
+
+2: Display the maximum Weight in the Parts table.
+
+	SELECT MAX(WEIGHT) FROM P;
+
+3: Display the average Weight of the Parts.
+
+	SELECT AVG(WEIGHT) FROM P;
+
+4: Display the total Quantity sold for part ‘P1’.
+
+	SELECT SUM(WEIGHT) FROM P WHERE `P#`='P1';
+
+5: Display the total Quantity sold for each part.
+
+	SELECT `P#` , SUM(QTY) FROM SPJ GROUP BY `P#`;
+
+6: Display the average Quantity sold for each part.
+	SELECT `P#`,AVG(QTY) FROM SPJ GROUP BY `P#`;
+
+7: Display the maximum Quantity sold for each part, 
+   provided the maximum Quantity is greater than 800.
+	
+	SELECT `P#`, MAX(QTY) FROM SPJ WHERE QTY>800 GROUP BY `P#`;
+
+
+8: Display the Status and the count of Suppliers with that Status.
+
+	SELECT STATUS, COUNT(`S#`)COUNT FROM S GROUP BY STATUS;
+
+9: Display the count of Projects going on in different cities.
+
+	SELECT CITY, COUNT(`P#`) "COUNT OF PROJECTS" FROM P GROUP BY `P#`;
+
+10: What is the difference between COUNT(Status) and COUNT(*) 
+	
+	SELECT (COUNT(STATUS)-COUNT(*)) AS "Difference" FROM S; 
+
+11: Display the Status and the Count of Suppliers with that Status in the following format 
+    as shown below:-
+    Status   Count 
+    Ten        1 
+    Twenty     2 
+    Thirty     3
+
